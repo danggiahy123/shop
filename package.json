@@ -1,0 +1,29 @@
+{
+  "name": "waterdg-shop",
+  "version": "1.0.0",
+  "description": "Trang web dịch vụ thiết kế website và ứng dụng mobile chuyên nghiệp",
+  "type": "module",
+  "main": "index.html",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "start": "vite --port 3000"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.2",
+    "vite": "^7.1.9"
+  },
+  "keywords": [
+    "website",
+    "design",
+    "mobile-app",
+    "services",
+    "vietnam"
+  ],
+  "author": "Waterdg Việt Nam",
+  "license": "MIT",
+  "dependencies": {
+    "socket.io-client": "^4.8.1"
+  }
+}

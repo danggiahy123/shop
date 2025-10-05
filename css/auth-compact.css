@@ -1,0 +1,221 @@
+/* Compact Auth Forms */
+.auth-container-compact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.auth-card-compact {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    width: 100%;
+    max-width: 400px;
+    position: relative;
+    overflow: hidden;
+}
+
+.auth-card-compact::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+}
+
+.auth-header-compact {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.auth-header-compact h2 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #2d3748;
+    margin: 0 0 8px 0;
+}
+
+.auth-header-compact p {
+    color: #718096;
+    font-size: 14px;
+    margin: 0;
+}
+
+.auth-form-compact {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group-compact {
+    position: relative;
+}
+
+.form-group-compact input {
+    width: 100%;
+    padding: 16px 20px;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    background: #f7fafc;
+    box-sizing: border-box;
+}
+
+.form-group-compact input:focus {
+    outline: none;
+    border-color: #667eea;
+    background: white;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.form-group-compact input::placeholder {
+    color: #a0aec0;
+    font-weight: 400;
+}
+
+.password-input-compact {
+    position: relative;
+}
+
+.password-input-compact input {
+    padding-right: 50px;
+}
+
+.password-toggle-compact {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #a0aec0;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.password-toggle-compact:hover {
+    color: #667eea;
+    background: rgba(102, 126, 234, 0.1);
+}
+
+.auth-btn-compact {
+    width: 100%;
+    padding: 16px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.auth-btn-compact:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+}
+
+.auth-btn-compact:active {
+    transform: translateY(0);
+}
+
+.auth-btn-compact.loading {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.auth-btn-compact.loading i {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.auth-switch-compact {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.auth-switch-compact p {
+    color: #718096;
+    font-size: 14px;
+    margin: 0;
+}
+
+.auth-switch-compact .switch-link {
+    color: #667eea;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.auth-switch-compact .switch-link:hover {
+    color: #764ba2;
+    text-decoration: underline;
+}
+
+.form-error {
+    color: #e53e3e;
+    font-size: 12px;
+    margin-top: 6px;
+    display: block;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .auth-container-compact {
+        padding: 15px;
+    }
+    
+    .auth-card-compact {
+        padding: 30px 25px;
+        border-radius: 16px;
+    }
+    
+    .auth-header-compact h2 {
+        font-size: 24px;
+    }
+    
+    .form-group-compact input {
+        padding: 14px 16px;
+        font-size: 15px;
+    }
+    
+    .auth-btn-compact {
+        padding: 14px;
+        font-size: 15px;
+    }
+}
+
+/* Animation for form appearance */
+.auth-card-compact {
+    animation: slideUp 0.6s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waterdg Việt Nam - Dịch vụ thiết kế web chuyên nghiệp</title>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/enhanced-sidebars.css">
+    <link rel="stylesheet" href="css/enhanced-notifications.css">
+    <link rel="stylesheet" href="css/product-showcase.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f8fafc;
+        }
+        
+        .main-container {
+            display: flex;
+            min-height: 100vh;
+        }
+        
+        .sidebar {
+            width: 280px;
+            background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
+            color: white;
+            padding: 20px;
+            box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+        }
+        
+        .content-area {
+            flex: 1;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        
+        .header {
+            background: white;
+            padding: 20px 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .header-left h1 {
+            margin: 0;
+            color: #1e293b;
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        
+        .header-right {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+        
+        .auth-toggle-btn {
+            background: linear-gradient(135deg, #3b82f6, #2563eb);
+            border: none;
+            border-radius: 12px;
+            color: white;
+            padding: 10px 16px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .auth-toggle-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
+        }
+        
+        .back-btn {
+            background: transparent;
+            border: 2px solid #3b82f6;
+            color: #3b82f6;
+            padding: 8px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .back-btn:hover {
+            background: #3b82f6;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <!-- Left Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo-container">
+                    <div class="logo-icon">
+                        <div class="logo-waves">
+                            <div class="wave wave-1"></div>
+                            <div class="wave wave-2"></div>
+                            <div class="wave wave-3"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="logo-text">Waterdg</div>
+                        <div class="logo-subtitle">Việt Nam</div>
+                    </div>
+                </div>
+            </div>
+            
+            <nav class="nav-items">
+                <div class="nav-item">
+                    <a href="index.html" class="nav-link">
+                        <i class="fas fa-home nav-icon"></i>
+                        Trang chủ
+                    </a>
+                </div>
+                <div class="nav-item active">
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-laptop nav-icon"></i>
+                        Website mẫu
+                    </a>
+                </div>
+                <div class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-mobile-alt nav-icon"></i>
+                        Mobile mẫu
+                    </a>
+                </div>
+                <div class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-briefcase nav-icon"></i>
+                        Portfolio
+                    </a>
+                </div>
+                <div class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-server nav-icon"></i>
+                        Dịch vụ Server
+                    </a>
+                </div>
+                <div class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-users nav-icon"></i>
+                        Khách hàng
+                    </a>
+                </div>
+            </nav>
+        </aside>
+        
+        <!-- Main Content -->
+        <main class="content-area">
+            <!-- Header -->
+            <header class="header">
+                <div class="header-left">
+                    <h1>Website Mẫu Chuyên Nghiệp</h1>
+                </div>
+                <div class="header-right">
+                    <a href="index.html" class="back-btn">
+                        <i class="fas fa-arrow-left"></i>
+                        Quay lại
+                    </a>
+                    <button class="auth-toggle-btn" onclick="toggleRightSidebar()">
+                        <i class="fas fa-user"></i>
+                        <span>Đăng nhập</span>
+                    </button>
+                </div>
+            </header>
+            
+            <!-- Product Showcase -->
+            <div class="product-showcase">
+                <div class="product-showcase-header">
+                    <h1 class="product-showcase-title">Dịch Vụ Thiết Kế Web Chuyên Nghiệp</h1>
+                    <p class="product-showcase-subtitle">
+                        Tạo ra những website hiện đại, tối ưu và hiệu quả cho doanh nghiệp của bạn
+                    </p>
+                    <p class="product-showcase-description">
+                        Với hơn 5 năm kinh nghiệm trong lĩnh vực thiết kế web, chúng tôi cam kết mang đến những giải pháp web hoàn hảo, 
+                        giúp doanh nghiệp của bạn phát triển mạnh mẽ trong kỷ nguyên số.
+                    </p>
+                </div>
+                
+                <div class="product-grid">
+                    <!-- Website Doanh Nghiệp -->
+                    <div class="product-card fade-in">
+                        <div class="product-image-container">
+                            <i class="fas fa-building product-icon"></i>
+                        </div>
+                        <div class="product-badge">Phổ biến</div>
+                        
+                        <div class="product-content">
+                            <h3 class="product-title">Website Doanh Nghiệp</h3>
+                            <p class="product-description">
+                                Thiết kế website chuyên nghiệp cho doanh nghiệp với giao diện hiện đại, 
+                                tối ưu SEO và trải nghiệm người dùng tuyệt vời.
+                            </p>
+                            
+                            <div class="product-features">
+                                <h4 class="product-features-title">Tính năng bao gồm:</h4>
+                                <ul class="product-feature-list">
+                                    <li class="product-feature-item">Thiết kế responsive cho mọi thiết bị</li>
+                                    <li class="product-feature-item">Tối ưu SEO chuẩn Google</li>
+                                    <li class="product-feature-item">Tốc độ tải trang nhanh</li>
+                                    <li class="product-feature-item">Bảo mật cao cấp</li>
+                                    <li class="product-feature-item">Hỗ trợ 24/7</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="product-pricing">
+                                <div>
+                                    <span class="product-price">5.000.000đ</span>
+                                    <span class="product-price-period">/dự án</span>
+                                </div>
+                            </div>
+                            
+                            <div class="product-actions">
+                                <button class="product-btn product-btn-primary">
+                                    <i class="fas fa-rocket"></i>
+                                    Đặt hàng ngay
+                                </button>
+                                <button class="product-btn product-btn-secondary">
+                                    <i class="fas fa-eye"></i>
+                                    Xem mẫu
+                                </button>
+                            </div>
+                            
+                            <div class="product-stats">
+                                <div class="product-stat">
+                                    <span class="product-stat-number">150+</span>
+                                    <span class="product-stat-label">Dự án</span>
+                                </div>
+                                <div class="product-stat">
+                                    <span class="product-stat-number">98%</span>
+                                    <span class="product-stat-label">Hài lòng</span>
+                                </div>
+                                <div class="product-stat">
+                                    <span class="product-stat-number">7 ngày</span>
+                                    <span class="product-stat-label">Hoàn thành</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Website Thương Mại Điện Tử -->
+                    <div class="product-card fade-in">
+                        <div class="product-image-container">
+                            <i class="fas fa-shopping-cart product-icon"></i>
+                        </div>
+                        <div class="product-badge new">Mới</div>
+                        
+                        <div class="product-content">
+                            <h3 class="product-title">Website Thương Mại Điện Tử</h3>
+                            <p class="product-description">
+                                Xây dựng cửa hàng online hoàn chỉnh với hệ thống thanh toán, 
+                                quản lý đơn hàng và tích hợp các phương thức vận chuyển.
+                            </p>
+                            
+                            <div class="product-features">
+                                <h4 class="product-features-title">Tính năng bao gồm:</h4>
+                                <ul class="product-feature-list">
+                                    <li class="product-feature-item">Giỏ hàng và thanh toán online</li>
+                                    <li class="product-feature-item">Quản lý sản phẩm và đơn hàng</li>
+                                    <li class="product-feature-item">Tích hợp vận chuyển</li>
+                                    <li class="product-feature-item">Báo cáo doanh thu chi tiết</li>
+                                    <li class="product-feature-item">Hỗ trợ đa ngôn ngữ</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="product-pricing">
+                                <div>
+                                    <span class="product-price">12.000.000đ</span>
+                                    <span class="product-price-period">/dự án</span>
+                                </div>
+                            </div>
+                            
+                            <div class="product-actions">
+                                <button class="product-btn product-btn-primary">
+                                    <i class="fas fa-rocket"></i>
+                                    Đặt hàng ngay
+                                </button>
+                                <button class="product-btn product-btn-secondary">
+                                    <i class="fas fa-eye"></i>
+                                    Xem mẫu
+                                </button>
+                            </div>
+                            
+                            <div class="product-stats">
+                                <div class="product-stat">
+                                    <span class="product-stat-number">50+</span>
+                                    <span class="product-stat-label">Cửa hàng</span>
+                                </div>
+                                <div class="product-stat">
+                                    <span class="product-stat-number">95%</span>
+                                    <span class="product-stat-label">Thành công</span>
+                                </div>
+                                <div class="product-stat">
+                                    <span class="product-stat-number">14 ngày</span>
+                                    <span class="product-stat-label">Hoàn thành</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Website Tin Tức -->
+                    <div class="product-card fade-in">
+                        <div class="product-image-container">
+                            <i class="fas fa-newspaper product-icon"></i>
+                        </div>
+                        <div class="product-badge">Chuyên nghiệp</div>
+                        
+                        <div class="product-content">
+                            <h3 class="product-title">Website Tin Tức</h3>
+                            <p class="product-description">
+                                Thiết kế website tin tức với hệ thống quản lý nội dung mạnh mẽ, 
+                                tối ưu cho việc đăng bài và chia sẻ thông tin.
+                            </p>
+                            
+                            <div class="product-features">
+                                <h4 class="product-features-title">Tính năng bao gồm:</h4>
+                                <ul class="product-feature-list">
+                                    <li class="product-feature-item">Hệ thống CMS chuyên nghiệp</li>
+                                    <li class="product-feature-item">Phân loại tin tức thông minh</li>
+                                    <li class="product-feature-item">Tìm kiếm và lọc nâng cao</li>
+                                    <li class="product-feature-item">Tích hợp mạng xã hội</li>
+                                    <li class="product-feature-item">Báo cáo thống kê chi tiết</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="product-pricing">
+                                <div>
+                                    <span class="product-price">8.000.000đ</span>
+                                    <span class="product-price-period">/dự án</span>
+                                </div>
+                            </div>
+                            
+                            <div class="product-actions">
+                                <button class="product-btn product-btn-primary">
+                                    <i class="fas fa-rocket"></i>
+                                    Đặt hàng ngay
+                                </button>
+                                <button class="product-btn product-btn-secondary">
+                                    <i class="fas fa-eye"></i>
+                                    Xem mẫu
+                                </button>
+                            </div>
+                            
+                            <div class="product-stats">
+                                <div class="product-stat">
+                                    <span class="product-stat-number">30+</span>
+                                    <span class="product-stat-label">Trang tin</span>
+                                </div>
+                                <div class="product-stat">
+                                    <span class="product-stat-number">99%</span>
+                                    <span class="product-stat-label">Ổn định</span>
+                                </div>
+                                <div class="product-stat">
+                                    <span class="product-stat-number">10 ngày</span>
+                                    <span class="product-stat-label">Hoàn thành</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Website Du Lịch -->
+                    <div class="product-card fade-in">
+                        <div class="product-image-container">
+                            <i class="fas fa-plane product-icon"></i>
+                        </div>
+                        <div class="product-badge">Đặc biệt</div>
+                        
+                        <div class="product-content">
+                            <h3 class="product-title">Website Du Lịch</h3>
+                            <p class="product-description">
+                                Tạo website du lịch với giao diện đẹp mắt, 
+                                tích hợp booking và thanh toán trực tuyến cho các tour du lịch.
+                            </p>
+                            
+                            <div class="product-features">
+                                <h4 class="product-features-title">Tính năng bao gồm:</h4>
+                                <ul class="product-feature-list">
+                                    <li class="product-feature-item">Đặt tour và booking online</li>
+                                    <li class="product-feature-item">Galerie hình ảnh đẹp</li>
+                                    <li class="product-feature-item">Bản đồ tích hợp</li>
+                                    <li class="product-feature-item">Đánh giá và review</li>
+                                    <li class="product-feature-item">Tích hợp thanh toán</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="product-pricing">
+                                <div>
+                                    <span class="product-price">15.000.000đ</span>
+                                    <span class="product-price-period">/dự án</span>
+                                </div>
+                            </div>
+                            
+                            <div class="product-actions">
+                                <button class="product-btn product-btn-primary">
+                                    <i class="fas fa-rocket"></i>
+                                    Đặt hàng ngay
+                                </button>
+                                <button class="product-btn product-btn-secondary">
+                                    <i class="fas fa-eye"></i>
+                                    Xem mẫu
+                                </button>
+                            </div>
+                            
+                            <div class="product-stats">
+                                <div class="product-stat">
+                                    <span class="product-stat-number">25+</span>
+                                    <span class="product-stat-label">Tour</span>
+                                </div>
+                                <div class="product-stat">
+                                    <span class="product-stat-number">97%</span>
+                                    <span class="product-stat-label">Đánh giá</span>
+                                </div>
+                                <div class="product-stat">
+                                    <span class="product-stat-number">21 ngày</span>
+                                    <span class="product-stat-label">Hoàn thành</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Website Giáo Dục -->
+                    <div class="product-card fade-in">
+                        <div class="product-image-container">
+                            <i class="fas fa-graduation-cap product-icon"></i>
+                        </div>
+                        <div class="product-badge">Học tập</div>
+                        
+                        <div class="product-content">
+                            <h3 class="product-title">Website Giáo Dục</h3>
+                            <p class="product-description">
+                                Xây dựng website học tập online với hệ thống quản lý khóa học, 
+                                bài tập và đánh giá học viên chuyên nghiệp.
+                            </p>
+                            
+                            <div class="product-features">
+                                <h4 class="product-features-title">Tính năng bao gồm:</h4>
+                                <ul class="product-feature-list">
+                                    <li class="product-feature-item">Hệ thống LMS hoàn chỉnh</li>
+                                    <li class="product-feature-item">Video học online</li>
+                                    <li class="product-feature-item">Bài tập và kiểm tra</li>
+                                    <li class="product-feature-item">Theo dõi tiến độ học</li>
+                                    <li class="product-feature-item">Chứng chỉ hoàn thành</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="product-pricing">
+                                <div>
+                                    <span class="product-price">20.000.000đ</span>
+                                    <span class="product-price-period">/dự án</span>
+                                </div>
+                            </div>
+                            
+                            <div class="product-actions">
+                                <button class="product-btn product-btn-primary">
+                                    <i class="fas fa-rocket"></i>
+                                    Đặt hàng ngay
+                                </button>
+                                <button class="product-btn product-btn-secondary">
+                                    <i class="fas fa-eye"></i>
+                                    Xem mẫu
+                                </button>
+                            </div>
+                            
+                            <div class="product-stats">
+                                <div class="product-stat">
+                                    <span class="product-stat-number">10+</span>
+                                    <span class="product-stat-label">Trường học</span>
+                                </div>
+                                <div class="product-stat">
+                                    <span class="product-stat-number">100%</span>
+                                    <span class="product-stat-label">Chất lượng</span>
+                                </div>
+                                <div class="product-stat">
+                                    <span class="product-stat-number">30 ngày</span>
+                                    <span class="product-stat-label">Hoàn thành</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Website Bất Động Sản -->
+                    <div class="product-card fade-in">
+                        <div class="product-image-container">
+                            <i class="fas fa-home product-icon"></i>
+                        </div>
+                        <div class="product-badge">Bất động sản</div>
+                        
+                        <div class="product-content">
+                            <h3 class="product-title">Website Bất Động Sản</h3>
+                            <p class="product-description">
+                                Thiết kế website bất động sản với bản đồ tích hợp, 
+                                tìm kiếm thông minh và quản lý danh sách bất động sản hiệu quả.
+                            </p>
+                            
+                            <div class="product-features">
+                                <h4 class="product-features-title">Tính năng bao gồm:</h4>
+                                <ul class="product-feature-list">
+                                    <li class="product-feature-item">Bản đồ và định vị GPS</li>
+                                    <li class="product-feature-item">Tìm kiếm thông minh</li>
+                                    <li class="product-feature-item">Galerie ảnh 360°</li>
+                                    <li class="product-feature-item">Tính toán khoản vay</li>
+                                    <li class="product-feature-item">Liên hệ trực tiếp</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="product-pricing">
+                                <div>
+                                    <span class="product-price">18.000.000đ</span>
+                                    <span class="product-price-period">/dự án</span>
+                                </div>
+                            </div>
+                            
+                            <div class="product-actions">
+                                <button class="product-btn product-btn-primary">
+                                    <i class="fas fa-rocket"></i>
+                                    Đặt hàng ngay
+                                </button>
+                                <button class="product-btn product-btn-secondary">
+                                    <i class="fas fa-eye"></i>
+                                    Xem mẫu
+                                </button>
+                            </div>
+                            
+                            <div class="product-stats">
+                                <div class="product-stat">
+                                    <span class="product-stat-number">40+</span>
+                                    <span class="product-stat-label">Dự án</span>
+                                </div>
+                                <div class="product-stat">
+                                    <span class="product-stat-number">96%</span>
+                                    <span class="product-stat-label">Thành công</span>
+                                </div>
+                                <div class="product-stat">
+                                    <span class="product-stat-number">25 ngày</span>
+                                    <span class="product-stat-label">Hoàn thành</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <!-- Right Sidebar -->
+    <aside class="right-sidebar" id="rightSidebar">
+        <div class="sidebar-header">
+            <h3>Đăng nhập / Đăng ký</h3>
+            <button class="close-sidebar" onclick="toggleRightSidebar()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="sidebar-content">
+            <!-- Login Form -->
+            <div class="auth-form-container" id="loginContainer">
+                <div class="auth-header">
+                    <h4>Đăng nhập</h4>
+                    <p>Chào mừng bạn quay trở lại!</p>
+                </div>
+                <form class="auth-form" id="loginForm">
+                    <div class="form-group">
+                        <input type="text" id="loginUsername" name="username" required 
+                               placeholder="Tên đăng nhập">
+                        <div class="form-error" id="loginUsernameError"></div>
+                    </div>
+                    <div class="form-group">
+                        <div class="password-input">
+                            <input type="password" id="loginPassword" name="password" required 
+                                   placeholder="Mật khẩu">
+                            <button type="button" class="password-toggle" onclick="togglePassword('loginPassword')">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                        <div class="form-error" id="loginPasswordError"></div>
+                    </div>
+                    <button type="submit" class="auth-btn login-btn">
+                        <i class="fas fa-sign-in-alt"></i>
+                        Đăng nhập
+                    </button>
+                    <div class="auth-switch">
+                        <p>Chưa có tài khoản? 
+                            <a href="#" onclick="switchToRegister()" class="switch-link">
+                                Đăng ký ngay
+                            </a>
+                        </p>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Register Form -->
+            <div class="auth-form-container" id="registerContainer" style="display: none;">
+                <div class="auth-header">
+                    <h4>Đăng ký</h4>
+                    <p>Tạo tài khoản mới để bắt đầu!</p>
+                </div>
+                <form class="auth-form" id="registerForm">
+                    <div class="form-group">
+                        <input type="text" id="registerUsername" name="username" required 
+                               placeholder="Tên đăng nhập (3-30 ký tự)">
+                        <div class="form-error" id="registerUsernameError"></div>
+                    </div>
+                    <div class="form-group">
+                        <div class="password-input">
+                            <input type="password" id="registerPassword" name="password" required 
+                                   placeholder="Mật khẩu (ít nhất 3 ký tự)">
+                            <button type="button" class="password-toggle" onclick="togglePassword('registerPassword')">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                        <div class="form-error" id="registerPasswordError"></div>
+                    </div>
+                    <div class="form-group">
+                        <div class="password-input">
+                            <input type="password" id="confirmPassword" name="confirmPassword" required 
+                                   placeholder="Nhập lại mật khẩu">
+                            <button type="button" class="password-toggle" onclick="togglePassword('confirmPassword')">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                        <div class="form-error" id="confirmPasswordError"></div>
+                    </div>
+                    <button type="submit" class="auth-btn register-btn">
+                        <i class="fas fa-user-plus"></i>
+                        Tạo tài khoản
+                    </button>
+                    <div class="auth-switch">
+                        <p>Đã có tài khoản? 
+                            <a href="#" onclick="switchToLogin()" class="switch-link">
+                                Đăng nhập ngay
+                            </a>
+                        </p>
+                    </div>
+                </form>
+            </div>
+
+            <!-- User Profile -->
+            <div class="user-profile" id="userProfile" style="display: none;">
+                <div class="profile-header">
+                    <div class="profile-avatar">
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+                    <div class="profile-info">
+                        <h4 id="profileUsername">Username</h4>
+                        <span class="profile-role" id="profileRole">Khách hàng</span>
+                    </div>
+                </div>
+                <div class="profile-stats">
+                    <div class="stat-item">
+                        <div class="stat-number" id="userOrdersCount">-</div>
+                        <div class="stat-label">Đơn hàng</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" id="userTotalSpent">-</div>
+                        <div class="stat-label">Tổng chi</div>
+                    </div>
+                </div>
+                <div class="profile-actions">
+                    <button class="profile-btn" onclick="showProfile()">
+                        <i class="fas fa-user"></i>
+                        Hồ sơ
+                    </button>
+                    <button class="profile-btn" onclick="showOrders()">
+                        <i class="fas fa-shopping-cart"></i>
+                        Đơn hàng
+                    </button>
+                    <button class="profile-btn logout-btn" onclick="handleLogout()">
+                        <i class="fas fa-sign-out-alt"></i>
+                        Đăng xuất
+                    </button>
+                </div>
+            </div>
+        </div>
+    </aside>
+    
+    <!-- Sidebar Overlay -->
+    <div class="sidebar-overlay" onclick="toggleRightSidebar()"></div>
+    
+    <!-- Scripts -->
+    <script src="js/enhanced-notifications.js"></script>
+    <script src="js/right-sidebar-auth.js"></script>
+    <script src="js/performance-manager.js"></script>
+    
+    <script>
+        // Initialize animations
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.product-card');
+            cards.forEach((card, index) => {
+                setTimeout(() => {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, index * 100);
+            });
+        });
+        
+        // Product button interactions
+        document.querySelectorAll('.product-btn-primary').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                if (window.showSuccess) {
+                    showSuccess('Cảm ơn bạn đã quan tâm! Chúng tôi sẽ liên hệ lại sớm nhất.', {
+                        title: 'Đặt hàng thành công',
+                        duration: 5000,
+                        actions: [
+                            {
+                                text: 'Liên hệ ngay',
+                                handler: 'window.open("tel:0123456789", "_self")'
+                            }
+                        ]
+                    });
+                }
+            });
+        });
+        
+        document.querySelectorAll('.product-btn-secondary').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                if (window.showInfo) {
+                    showInfo('Tính năng xem mẫu sẽ được cập nhật sớm!', {
+                        title: 'Thông báo',
+                        duration: 3000
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

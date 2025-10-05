@@ -1,0 +1,261 @@
+/* Enhanced Notification System */
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    min-width: 320px;
+    max-width: 500px;
+    padding: 18px 22px;
+    border-radius: 16px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(20px);
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.5;
+    transform: translateX(120%);
+    opacity: 0;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border-left: 5px solid;
+    cursor: pointer;
+}
+
+.notification.show {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.notification.hide {
+    transform: translateX(120%);
+    opacity: 0;
+}
+
+.notification-icon {
+    font-size: 22px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.notification-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.notification-title {
+    font-weight: 700;
+    margin-bottom: 6px;
+    font-size: 16px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.notification-message {
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.notification-close {
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 20px;
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.notification-close:hover {
+    color: rgba(255, 255, 255, 1);
+    background: rgba(255, 255, 255, 0.15);
+    transform: scale(1.1);
+}
+
+/* Success Notification */
+.notification.success {
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white;
+    border-left-color: #34d399;
+    box-shadow: 0 12px 40px rgba(16, 185, 129, 0.3);
+}
+
+.notification.success .notification-icon {
+    background: rgba(255, 255, 255, 0.25);
+    animation: successPulse 2s infinite;
+}
+
+@keyframes successPulse {
+    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.7); }
+    70% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(52, 211, 153, 0); }
+    100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(52, 211, 153, 0); }
+}
+
+/* Error Notification */
+.notification.error {
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+    color: white;
+    border-left-color: #f87171;
+    box-shadow: 0 12px 40px rgba(239, 68, 68, 0.3);
+}
+
+.notification.error .notification-icon {
+    background: rgba(255, 255, 255, 0.25);
+    animation: errorShake 0.5s ease-in-out;
+}
+
+@keyframes errorShake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-2px); }
+    75% { transform: translateX(2px); }
+}
+
+/* Warning Notification */
+.notification.warning {
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+    color: white;
+    border-left-color: #fbbf24;
+    box-shadow: 0 12px 40px rgba(245, 158, 11, 0.3);
+}
+
+.notification.warning .notification-icon {
+    background: rgba(255, 255, 255, 0.25);
+    animation: warningBounce 1s ease-in-out infinite;
+}
+
+@keyframes warningBounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-3px); }
+}
+
+/* Info Notification */
+.notification.info {
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    color: white;
+    border-left-color: #60a5fa;
+    box-shadow: 0 12px 40px rgba(59, 130, 246, 0.3);
+}
+
+.notification.info .notification-icon {
+    background: rgba(255, 255, 255, 0.25);
+    animation: infoRotate 2s linear infinite;
+}
+
+@keyframes infoRotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Progress Notification */
+.notification.progress {
+    background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+    color: white;
+    border-left-color: #a78bfa;
+    box-shadow: 0 12px 40px rgba(139, 92, 246, 0.3);
+}
+
+.notification.progress .notification-icon {
+    background: rgba(255, 255, 255, 0.25);
+    animation: progressGlow 1.5s ease-in-out infinite;
+}
+
+@keyframes progressGlow {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+}
+
+/* Notification Stack */
+.notification-stack {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 10000;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-height: calc(100vh - 40px);
+    overflow-y: auto;
+    padding-right: 12px;
+}
+
+/* Auto-hide progress bar */
+.notification-progress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 0 0 16px 16px;
+    transition: width linear;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .notification {
+        right: 15px;
+        left: 15px;
+        min-width: auto;
+        max-width: none;
+        transform: translateY(-120%);
+        top: 15px;
+    }
+    
+    .notification.show {
+        transform: translateY(0);
+    }
+    
+    .notification.hide {
+        transform: translateY(-120%);
+    }
+    
+    .notification-stack {
+        right: 15px;
+        left: 15px;
+        top: 15px;
+    }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    .notification {
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+    }
+}
+
+/* Animation for multiple notifications */
+.notification:nth-child(1) { animation-delay: 0ms; }
+.notification:nth-child(2) { animation-delay: 150ms; }
+.notification:nth-child(3) { animation-delay: 300ms; }
+.notification:nth-child(4) { animation-delay: 450ms; }
+.notification:nth-child(5) { animation-delay: 600ms; }
+
+/* Hover effects */
+.notification:hover {
+    transform: translateX(-5px) scale(1.02);
+    box-shadow: 0 16px 50px rgba(0, 0, 0, 0.25);
+}
+
+.notification.show:hover {
+    transform: translateX(-5px) scale(1.02);
+}

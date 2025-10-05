@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Test</title>
+</head>
+<body>
+    <h1>API Connection Test</h1>
+    <button onclick="testAPI()">Test API Connection</button>
+    <button onclick="testLogin()">Test Login</button>
+    <div id="result"></div>
+
+    <script>
+        const API_BASE_URL = 'http://localhost:5000/api';
+
+        async function testAPI() {
+            const resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = 'Testing API connection...';
+            
+            try {
+                const response = await fetch(`${API_BASE_URL}/auth/me`);
+                const data = await response.json();
+                resultDiv.innerHTML = `
+                    <h3>API Test Result:</h3>
+                    <p>Status: ${response.status}</p>
+                    <p>Response: ${JSON.stringify(data, null, 2)}</p>
+                `;
+            } catch (error) {
+                resultDiv.innerHTML = `
+                    <h3>API Test Error:</h3>
+                    <p>Error: ${error.message}</p>
+                    <p>This means backend is not running or CORS is not configured!</p>
+                `;
+            }
+        }
+
+        async function testLogin() {
+            const resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = 'Testing login with wrong credentials...';
+            
+            try {
+                const response = await fetch(`${API_BASE_URL}/auth/login`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        email: 'wrong@email.com',
+                        password: 'wrongpassword'
+                    })
+                });
+                
+                const data = await response.json();
+                resultDiv.innerHTML = `
+                    <h3>Login Test Result:</h3>
+                    <p>Status: ${response.status}</p>
+                    <p>Response: ${JSON.stringify(data, null, 2)}</p>
+                    <p>Expected: Should return error for wrong credentials</p>
+                `;
+            } catch (error) {
+                resultDiv.innerHTML = `
+                    <h3>Login Test Error:</h3>
+                    <p>Error: ${error.message}</p>
+                    <p>This means backend is not running!</p>
+                `;
+            }
+        }
+    </script>
+</body>
+</html>

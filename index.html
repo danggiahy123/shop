@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waterdg Việt Nam - Dịch vụ thiết kế web chuyên nghiệp</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/sidebar.css">
+    <link rel="stylesheet" href="css/navigation.css">
+    <link rel="stylesheet" href="css/hot-ribbons.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/auth.css">
+    <link rel="stylesheet" href="css/auth-compact.css">
+    <link rel="stylesheet" href="css/user-info.css">
+    <link rel="stylesheet" href="css/samples.css">
+    <link rel="stylesheet" href="css/server-services.css">
+    <link rel="stylesheet" href="css/header-auth.css">
+    <!-- Modern UI Framework -->
+    <link rel="stylesheet" href="css/modern-ui.css">
+    <link rel="stylesheet" href="css/laptop-fixes.css">
+    <link rel="stylesheet" href="css/enhanced-notifications.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo-container">
+                    <div class="logo-icon">
+                        <div class="logo-waves">
+                            <div class="wave wave-1"></div>
+                            <div class="wave wave-2"></div>
+                            <div class="wave wave-3"></div>
+                        </div>
+                        <div class="logo-dot"></div>
+                    </div>
+                    <div class="logo-text">
+                        <h2 class="brand-name">Waterdg</h2>
+                        <span class="brand-subtitle">Việt Nam</span>
+                    </div>
+                </div>
+                <button class="sidebar-toggle" id="sidebarToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="#home" class="nav-link active" data-section="home">
+                        <i class="fas fa-home"></i> Trang chủ
+                    </a></li>
+                    <li><a href="#promotions" class="nav-link super-hot" data-section="promotions">
+                        <i class="fas fa-gift"></i> Khuyến mãi
+                    </a></li>
+                    
+                    <li class="nav-group">
+                        <div class="nav-group-title">
+                            <i class="fas fa-code"></i> Sản phẩm mẫu
+                        </div>
+                        <ul class="nav-submenu">
+                            <li><a href="website-samples.html" class="nav-link hot">
+                                <i class="fas fa-globe"></i> Website mẫu
+                            </a></li>
+                            <li><a href="#mobile-samples" class="nav-link hot" data-section="mobile-samples">
+                                <i class="fas fa-mobile-alt"></i> Mobile app mẫu
+                            </a></li>
+                            <li><a href="#portfolio-samples" class="nav-link hot" data-section="portfolio-samples">
+                                <i class="fas fa-briefcase"></i> Portfolio mẫu
+                            </a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="nav-group">
+                        <div class="nav-group-title">
+                            <i class="fas fa-server"></i> Dịch vụ Server
+                        </div>
+                        <ul class="nav-submenu">
+                            <li><a href="#vps" class="nav-link hot" data-section="vps">
+                                <i class="fas fa-cloud"></i> VPS
+                            </a></li>
+                            <li><a href="#vps-vsan" class="nav-link hot" data-section="vps-vsan">
+                                <i class="fas fa-database"></i> VPS Vsan
+                            </a></li>
+                            <li><a href="#server-hosting" class="nav-link" data-section="server-hosting">
+                                <i class="fas fa-building"></i> Đặt máy chủ
+                            </a></li>
+                            <li><a href="#physical-server" class="nav-link" data-section="physical-server">
+                                <i class="fas fa-server"></i> Máy chủ vật lý
+                            </a></li>
+                        </ul>
+                    </li>
+                    
+                    <li><a href="#services" class="nav-link" data-section="services">
+                        <i class="fas fa-cogs"></i> Gói dịch vụ
+                    </a></li>
+                    <li><a href="#contact" class="nav-link" data-section="contact">
+                        <i class="fas fa-envelope"></i> Liên hệ
+                    </a></li>
+                    <li><a href="#commitment" class="nav-link" data-section="commitment">
+                        <i class="fas fa-handshake"></i> Cam kết
+                    </a></li>
+                </ul>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <div class="user-info">
+                    <i class="fas fa-user"></i>
+                    <span>Khách hàng</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="main-header">
+                <div class="main-header-content">
+                    <div class="header-left">
+                        <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                            <i class="fas fa-bars"></i>
+                        </button>
+                        <h1 class="header-title" id="pageTitle">
+                            <i class="fas fa-home"></i>
+                            Trang chủ
+                        </h1>
+                    </div>
+                    
+                    <div class="header-center">
+                        <div class="search-box">
+                            <input type="text" id="searchInput" placeholder="Tìm kiếm sản phẩm...">
+                            <button id="searchBtn"><i class="fas fa-search"></i></button>
+                        </div>
+                    </div>
+                    
+                    <div class="header-right">
+                        <!-- Auth button -->
+                        <button class="auth-toggle-btn" onclick="toggleRightSidebar()">
+                            <i class="fas fa-user"></i>
+                            <span>Đăng nhập</span>
+                        </button>
+                    </div>
+                </div>
+            </header>
+
+            <div class="content-area">
+
+                <!-- Right Sidebar -->
+                <aside class="right-sidebar" id="rightSidebar">
+                    <div class="sidebar-header">
+                        <h3>Đăng nhập / Đăng ký</h3>
+                        <button class="close-sidebar" onclick="toggleRightSidebar()">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="sidebar-content">
+                        <!-- Login Form -->
+                        <div class="auth-form-container" id="loginContainer">
+                            <div class="auth-header">
+                                <h4>Đăng nhập</h4>
+                                <p>Chào mừng bạn quay trở lại!</p>
+                            </div>
+                            
+                            <form class="auth-form" id="loginForm">
+                                <div class="form-group">
+                                    <input type="text" id="loginUsername" name="username" required 
+                                           placeholder="Tên đăng nhập">
+                                    <div class="form-error" id="loginUsernameError"></div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <div class="password-input">
+                                        <input type="password" id="loginPassword" name="password" required 
+                                               placeholder="Mật khẩu">
+                                        <button type="button" class="password-toggle" onclick="togglePassword('loginPassword')">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                    </div>
+                                    <div class="form-error" id="loginPasswordError"></div>
+                                </div>
+                                
+                                <button type="submit" class="auth-btn login-btn">
+                                    <i class="fas fa-sign-in-alt"></i>
+                                    Đăng nhập
+                                </button>
+                                
+                                <div class="auth-switch">
+                                    <p>Chưa có tài khoản? 
+                                        <a href="#" onclick="switchToRegister()" class="switch-link">
+                                            Đăng ký ngay
+                                        </a>
+                                    </p>
+                                </div>
+                            </form>
+                        </div>
+
+                        <!-- Register Form -->
+                        <div class="auth-form-container" id="registerContainer" style="display: none;">
+                            <div class="auth-header">
+                                <h4>Đăng ký</h4>
+                                <p>Tạo tài khoản mới để bắt đầu!</p>
+                            </div>
+                            
+                            <form class="auth-form" id="registerForm">
+                                <div class="form-group">
+                                    <input type="text" id="registerUsername" name="username" required 
+                                           placeholder="Tên đăng nhập (3-30 ký tự)">
+                                    <div class="form-error" id="registerUsernameError"></div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <div class="password-input">
+                                        <input type="password" id="registerPassword" name="password" required 
+                                               placeholder="Mật khẩu (ít nhất 6 ký tự)">
+                                        <button type="button" class="password-toggle" onclick="togglePassword('registerPassword')">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                    </div>
+                                    <div class="form-error" id="registerPasswordError"></div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <div class="password-input">
+                                        <input type="password" id="confirmPassword" name="confirmPassword" required 
+                                               placeholder="Nhập lại mật khẩu">
+                                        <button type="button" class="password-toggle" onclick="togglePassword('confirmPassword')">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                    </div>
+                                    <div class="form-error" id="confirmPasswordError"></div>
+                                </div>
+                                
+                                <button type="submit" class="auth-btn register-btn">
+                                    <i class="fas fa-user-plus"></i>
+                                    Tạo tài khoản
+                                </button>
+                                
+                                <div class="auth-switch">
+                                    <p>Đã có tài khoản? 
+                                        <a href="#" onclick="switchToLogin()" class="switch-link">
+                                            Đăng nhập ngay
+                                        </a>
+                                    </p>
+                                </div>
+                            </form>
+                        </div>
+
+                        <!-- User Profile (hidden by default) -->
+                        <div class="user-profile" id="userProfile" style="display: none;">
+                            <div class="profile-header">
+                                <div class="profile-avatar">
+                                    <i class="fas fa-user-circle"></i>
+                                </div>
+                                <div class="profile-info">
+                                    <h4 id="profileUsername">Username</h4>
+                                    <span class="profile-role" id="profileRole">Khách hàng</span>
+                                </div>
+                            </div>
+                            
+                            <div class="profile-stats">
+                                <div class="stat-item">
+                                    <div class="stat-number" id="userOrdersCount">-</div>
+                                    <div class="stat-label">Đơn hàng</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-number" id="userTotalSpent">-</div>
+                                    <div class="stat-label">Tổng chi</div>
+                                </div>
+                            </div>
+                            
+                            <div class="profile-actions">
+                                <button class="profile-btn" onclick="showProfile()">
+                                    <i class="fas fa-user"></i>
+                                    Hồ sơ
+                                </button>
+                                <button class="profile-btn" onclick="showOrders()">
+                                    <i class="fas fa-shopping-cart"></i>
+                                    Đơn hàng
+                                </button>
+                                <button class="profile-btn logout-btn" onclick="handleLogout()">
+                                    <i class="fas fa-sign-out-alt"></i>
+                                    Đăng xuất
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+
+                <!-- Home Section -->
+                <section id="home" class="content-section active">
+                    <!-- Hero Section -->
+                    <div class="hero-section">
+                        <div class="hero-content">
+                            <div class="hero-badge">
+                                <i class="fas fa-star"></i>
+                                <span>Đối tác tin cậy của hơn 500+ doanh nghiệp</span>
+                            </div>
+                            <h1>Waterdg Việt Nam</h1>
+                            <h2>Giải pháp công nghệ toàn diện cho doanh nghiệp</h2>
+                            <p>Chúng tôi chuyên cung cấp dịch vụ thiết kế website, phát triển ứng dụng mobile và giải pháp công nghệ thông tin chuyên nghiệp, giúp doanh nghiệp của bạn phát triển mạnh mẽ trong kỷ nguyên số.</p>
+                            <div class="hero-buttons">
+                                <button class="btn btn-primary" onclick="showSection('services')">
+                                    <i class="fas fa-rocket"></i> Khám phá dịch vụ
+                                </button>
+                                <button class="btn btn-secondary" onclick="showSection('contact')">
+                                    <i class="fas fa-phone"></i> Tư vấn miễn phí
+                                </button>
+                            </div>
+                            <div class="hero-features">
+                                <div class="feature-item">
+                                    <i class="fas fa-shield-alt"></i>
+                                    <span>Bảo mật cao</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-clock"></i>
+                                    <span>Giao hàng nhanh</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-headset"></i>
+                                    <span>Hỗ trợ 24/7</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- About Section -->
+                    <div class="about-section">
+                        <div class="about-content">
+                            <div class="about-text">
+                                <h3>Về Waterdg Việt Nam</h3>
+                                <h4>Đối tác công nghệ đáng tin cậy của bạn</h4>
+                                <p>Với hơn 5 năm kinh nghiệm trong lĩnh vực công nghệ thông tin, Waterdg Việt Nam tự hào là đơn vị hàng đầu cung cấp các giải pháp công nghệ toàn diện cho doanh nghiệp. Chúng tôi cam kết mang đến những sản phẩm chất lượng cao, đáp ứng mọi nhu cầu của khách hàng.</p>
+                                <div class="about-highlights">
+                                    <div class="highlight-item">
+                                        <i class="fas fa-award"></i>
+                                        <div>
+                                            <h5>Chuyên nghiệp</h5>
+                                            <p>Đội ngũ kỹ thuật giàu kinh nghiệm</p>
+                                        </div>
+                                    </div>
+                                    <div class="highlight-item">
+                                        <i class="fas fa-lightbulb"></i>
+                                        <div>
+                                            <h5>Sáng tạo</h5>
+                                            <p>Giải pháp công nghệ tiên tiến</p>
+                                        </div>
+                                    </div>
+                                    <div class="highlight-item">
+                                        <i class="fas fa-handshake"></i>
+                                        <div>
+                                            <h5>Tin cậy</h5>
+                                            <p>Cam kết chất lượng và dịch vụ</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="about-stats">
+                                <div class="stat-item">
+                                    <div class="stat-number">500+</div>
+                                    <div class="stat-label">Dự án hoàn thành</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-number">98%</div>
+                                    <div class="stat-label">Khách hàng hài lòng</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-number">5+</div>
+                                    <div class="stat-label">Năm kinh nghiệm</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-number">24/7</div>
+                                    <div class="stat-label">Hỗ trợ khách hàng</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Services Overview -->
+                    <div class="services-overview">
+                        <div class="section-header">
+                            <h3>Dịch vụ chuyên nghiệp</h3>
+                            <p>Chúng tôi cung cấp đầy đủ các giải pháp công nghệ cho doanh nghiệp</p>
+                        </div>
+                        <div class="services-grid">
+                            <div class="service-card hot">
+                                <div class="service-icon"><i class="fas fa-globe"></i></div>
+                                <h4>Thiết kế Website</h4>
+                                <p>Website responsive, hiện đại và tối ưu SEO cho mọi thiết bị</p>
+                                <ul class="service-features">
+                                    <li>Responsive Design</li>
+                                    <li>SEO Optimization</li>
+                                    <li>Fast Loading</li>
+                                </ul>
+                            </div>
+                            <div class="service-card">
+                                <div class="service-icon"><i class="fas fa-mobile-alt"></i></div>
+                                <h4>Ứng dụng Mobile</h4>
+                                <p>App iOS và Android chất lượng cao với UX/UI chuyên nghiệp</p>
+                                <ul class="service-features">
+                                    <li>iOS & Android</li>
+                                    <li>Cross-platform</li>
+                                    <li>Native Performance</li>
+                                </ul>
+                            </div>
+                            <div class="service-card hot">
+                                <div class="service-icon"><i class="fas fa-shopping-cart"></i></div>
+                                <h4>E-commerce</h4>
+                                <p>Website thương mại điện tử với tính năng thanh toán đầy đủ</p>
+                                <ul class="service-features">
+                                    <li>Payment Gateway</li>
+                                    <li>Inventory Management</li>
+                                    <li>Order Tracking</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonials -->
+                    <div class="testimonials-section">
+                        <div class="section-header">
+                            <h3>Khách hàng nói gì về chúng tôi</h3>
+                            <p>Những phản hồi tích cực từ các đối tác tin cậy</p>
+                        </div>
+                        <div class="testimonials-grid">
+                            <div class="testimonial-card">
+                                <div class="testimonial-content">
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <p>"Waterdg đã giúp chúng tôi tạo ra một website chuyên nghiệp và hiệu quả. Dịch vụ hỗ trợ tuyệt vời!"</p>
+                                </div>
+                                <div class="testimonial-author">
+                                    <div class="author-avatar">A</div>
+                                    <div class="author-info">
+                                        <h5>Anh Minh</h5>
+                                        <span>CEO, TechStart</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="testimonial-card">
+                                <div class="testimonial-content">
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <p>"Ứng dụng mobile do Waterdg phát triển đã giúp doanh thu của chúng tôi tăng 300%!"</p>
+                                </div>
+                                <div class="testimonial-author">
+                                    <div class="author-avatar">T</div>
+                                    <div class="author-info">
+                                        <h5>Chị Thu</h5>
+                                        <span>Founder, ShopOnline</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="testimonial-card">
+                                <div class="testimonial-content">
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <p>"Đội ngũ chuyên nghiệp, sản phẩm chất lượng cao. Tôi rất hài lòng với dịch vụ!"</p>
+                                </div>
+                                <div class="testimonial-author">
+                                    <div class="author-avatar">H</div>
+                                    <div class="author-info">
+                                        <h5>Anh Hùng</h5>
+                                        <span>Director, InnovateCorp</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Promotions Section -->
+                <section id="promotions" class="content-section">
+                    <h2>Khuyến mãi đặc biệt</h2>
+                    <div class="promotions-grid">
+                        <div class="promotion-card">
+                            <div class="promotion-badge">-30%</div>
+                            <h3>Gói Website Cơ bản</h3>
+                            <p>Thiết kế website đơn giản, responsive</p>
+                            <div class="promotion-price">
+                                <span class="old-price">5.000.000 VNĐ</span>
+                                <span class="new-price">3.500.000 VNĐ</span>
+                            </div>
+                        </div>
+                        <div class="promotion-card">
+                            <div class="promotion-badge">-20%</div>
+                            <h3>Gói Mobile App</h3>
+                            <p>Ứng dụng mobile iOS/Android</p>
+                            <div class="promotion-price">
+                                <span class="old-price">15.000.000 VNĐ</span>
+                                <span class="new-price">12.000.000 VNĐ</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Website Samples Section -->
+                <section id="website-samples" class="content-section">
+                    <div class="section-header">
+                        <h2><i class="fas fa-globe"></i> Website Mẫu</h2>
+                        <p>Khám phá các mẫu website chuyên nghiệp được thiết kế sẵn</p>
+                    </div>
+
+                    <div class="samples-grid">
+                        <!-- Website Sample 1 -->
+                        <div class="sample-card">
+                            <div class="sample-image">
+                                <img src="https://via.placeholder.com/300x200/3b82f6/ffffff?text=Corporate+Website" alt="Corporate Website">
+                                <div class="sample-badge">HOT</div>
+                            </div>
+                            <div class="sample-content">
+                                <h3>Corporate Website</h3>
+                                <p>Website công ty chuyên nghiệp với thiết kế hiện đại, responsive và tối ưu SEO.</p>
+                                <div class="sample-features">
+                                    <span class="feature-tag">Responsive</span>
+                                    <span class="feature-tag">SEO</span>
+                                    <span class="feature-tag">CMS</span>
+                                </div>
+                                <div class="sample-price">2,500,000 VNĐ</div>
+                                <button class="btn btn-primary purchase-btn" onclick="handlePurchase('corporate-website', 'Corporate Website', 2500000)">
+                                    <i class="fas fa-shopping-cart"></i>
+                                    <span class="btn-text">Mua ngay</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Website Sample 2 -->
+                        <div class="sample-card">
+                            <div class="sample-image">
+                                <img src="https://via.placeholder.com/300x200/10b981/ffffff?text=E-commerce+Store" alt="E-commerce Store">
+                                <div class="sample-badge">HOT</div>
+                            </div>
+                            <div class="sample-content">
+                                <h3>E-commerce Store</h3>
+                                <p>Cửa hàng trực tuyến hoàn chỉnh với giỏ hàng, thanh toán và quản lý đơn hàng.</p>
+                                <div class="sample-features">
+                                    <span class="feature-tag">E-commerce</span>
+                                    <span class="feature-tag">Payment</span>
+                                    <span class="feature-tag">Admin</span>
+                                </div>
+                                <div class="sample-price">4,500,000 VNĐ</div>
+                                <button class="btn btn-primary purchase-btn" onclick="handlePurchase('ecommerce-store', 'E-commerce Store', 4500000)">
+                                    <i class="fas fa-shopping-cart"></i>
+                                    <span class="btn-text">Mua ngay</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Website Sample 3 -->
+                        <div class="sample-card">
+                            <div class="sample-image">
+                                <img src="https://via.placeholder.com/300x200/f59e0b/ffffff?text=Restaurant+Website" alt="Restaurant Website">
+                                <div class="sample-badge">NEW</div>
+                            </div>
+                            <div class="sample-content">
+                                <h3>Restaurant Website</h3>
+                                <p>Website nhà hàng với menu động, đặt bàn trực tuyến và tích hợp mạng xã hội.</p>
+                                <div class="sample-features">
+                                    <span class="feature-tag">Menu</span>
+                                    <span class="feature-tag">Booking</span>
+                                    <span class="feature-tag">Social</span>
+                                </div>
+                                <div class="sample-price">3,200,000 VNĐ</div>
+                                <button class="btn btn-primary purchase-btn" onclick="handlePurchase('restaurant-website', 'Restaurant Website', 3200000)">
+                                    <i class="fas fa-shopping-cart"></i>
+                                    <span class="btn-text">Mua ngay</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Website Sample 4 -->
+                        <div class="sample-card">
+                            <div class="sample-image">
+                                <img src="https://via.placeholder.com/300x200/8b5cf6/ffffff?text=Portfolio+Website" alt="Portfolio Website">
+                            </div>
+                            <div class="sample-content">
+                                <h3>Portfolio Website</h3>
+                                <p>Website portfolio cá nhân với gallery ảnh, blog và liên hệ trực tiếp.</p>
+                                <div class="sample-features">
+                                    <span class="feature-tag">Gallery</span>
+                                    <span class="feature-tag">Blog</span>
+                                    <span class="feature-tag">Contact</span>
+                                </div>
+                                <div class="sample-price">1,800,000 VNĐ</div>
+                                <button class="btn btn-primary purchase-btn" onclick="handlePurchase('portfolio-website', 'Portfolio Website', 1800000)">
+                                    <i class="fas fa-shopping-cart"></i>
+                                    <span class="btn-text">Mua ngay</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Website Sample 5 -->
+                        <div class="sample-card">
+                            <div class="sample-image">
+                                <img src="https://via.placeholder.com/300x200/ef4444/ffffff?text=News+Website" alt="News Website">
+                            </div>
+                            <div class="sample-content">
+                                <h3>News Website</h3>
+                                <p>Website tin tức với hệ thống quản lý bài viết, phân loại và tìm kiếm.</p>
+                                <div class="sample-features">
+                                    <span class="feature-tag">CMS</span>
+                                    <span class="feature-tag">Search</span>
+                                    <span class="feature-tag">Categories</span>
+                                </div>
+                                <div class="sample-price">3,800,000 VNĐ</div>
+                                <button class="btn btn-primary purchase-btn" onclick="handlePurchase('news-website', 'News Website', 3800000)">
+                                    <i class="fas fa-shopping-cart"></i>
+                                    <span class="btn-text">Mua ngay</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Website Sample 6 -->
+                        <div class="sample-card">
+                            <div class="sample-image">
+                                <img src="https://via.placeholder.com/300x200/06b6d4/ffffff?text=Landing+Page" alt="Landing Page">
+                            </div>
+                            <div class="sample-content">
+                                <h3>Landing Page</h3>
+                                <p>Trang landing page tối ưu conversion với form đăng ký và tích hợp analytics.</p>
+                                <div class="sample-features">
+                                    <span class="feature-tag">Conversion</span>
+                                    <span class="feature-tag">Analytics</span>
+                                    <span class="feature-tag">Forms</span>
+                                </div>
+                                <div class="sample-price">1,500,000 VNĐ</div>
+                                <button class="btn btn-primary purchase-btn" onclick="handlePurchase('landing-page', 'Landing Page', 1500000)">
+                                    <i class="fas fa-shopping-cart"></i>
+                                    <span class="btn-text">Mua ngay</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Mobile Samples Section -->
+                <section id="mobile-samples" class="content-section">
+                    <h2>Mobile App mẫu</h2>
+                    <div class="samples-grid">
+                        <div class="sample-card">
+                            <div class="sample-image">📱</div>
+                            <h3>App iOS</h3>
+                            <p>Ứng dụng cho iPhone và iPad</p>
+                        </div>
+                        <div class="sample-card">
+                            <div class="sample-image">🤖</div>
+                            <h3>App Android</h3>
+                            <p>Ứng dụng cho điện thoại Android</p>
+                        </div>
+                        <div class="sample-card">
+                            <div class="sample-image">⚡</div>
+                            <h3>App Cross-platform</h3>
+                            <p>Chạy trên cả iOS và Android</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Portfolio Samples Section -->
+                <section id="portfolio-samples" class="content-section">
+                    <h2>Portfolio mẫu</h2>
+                    <div class="samples-grid">
+                        <div class="sample-card">
+                            <div class="sample-image">👨‍💼</div>
+                            <h3>Portfolio Cá nhân</h3>
+                            <p>Trang cá nhân cho freelancer</p>
+                        </div>
+                        <div class="sample-card">
+                            <div class="sample-image">🎨</div>
+                            <h3>Portfolio Designer</h3>
+                            <p>Showcase tác phẩm thiết kế</p>
+                        </div>
+                        <div class="sample-card">
+                            <div class="sample-image">💼</div>
+                            <h3>Portfolio Agency</h3>
+                            <p>Trang công ty dịch vụ</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- VPS Section -->
+                <section id="vps" class="content-section">
+                    <div class="section-header">
+                        <h2><i class="fas fa-cloud"></i> Dịch vụ VPS</h2>
+                        <p>Máy chủ ảo mạnh mẽ với hiệu suất cao</p>
+                    </div>
+                    
+                    <div class="vps-packages">
+                        <div class="package-card featured">
+                            <div class="package-badge">Phổ biến</div>
+                            <h3>VPS Standard</h3>
+                            <div class="package-price">2.500.000 VNĐ<span>/tháng</span></div>
+                            <ul class="package-features">
+                                <li><i class="fas fa-check"></i> 4 CPU cores</li>
+                                <li><i class="fas fa-check"></i> 8GB RAM</li>
+                                <li><i class="fas fa-check"></i> 100GB SSD</li>
+                                <li><i class="fas fa-check"></i> 1TB Bandwidth</li>
+                                <li><i class="fas fa-check"></i> 24/7 Support</li>
+                            </ul>
+                            <button class="package-btn">Chọn gói</button>
+                        </div>
+                        
+                        <div class="package-card">
+                            <h3>VPS Premium</h3>
+                            <div class="package-price">4.500.000 VNĐ<span>/tháng</span></div>
+                            <ul class="package-features">
+                                <li><i class="fas fa-check"></i> 8 CPU cores</li>
+                                <li><i class="fas fa-check"></i> 16GB RAM</li>
+                                <li><i class="fas fa-check"></i> 200GB SSD</li>
+                                <li><i class="fas fa-check"></i> 2TB Bandwidth</li>
+                                <li><i class="fas fa-check"></i> 24/7 Support</li>
+                            </ul>
+                            <button class="package-btn">Chọn gói</button>
+                        </div>
+                        
+                        <div class="package-card">
+                            <h3>VPS Enterprise</h3>
+                            <div class="package-price">8.500.000 VNĐ<span>/tháng</span></div>
+                            <ul class="package-features">
+                                <li><i class="fas fa-check"></i> 16 CPU cores</li>
+                                <li><i class="fas fa-check"></i> 32GB RAM</li>
+                                <li><i class="fas fa-check"></i> 500GB SSD</li>
+                                <li><i class="fas fa-check"></i> 5TB Bandwidth</li>
+                                <li><i class="fas fa-check"></i> 24/7 Support</li>
+                            </ul>
+                            <button class="package-btn">Chọn gói</button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- VPS Vsan Section -->
+                <section id="vps-vsan" class="content-section">
+                    <div class="section-header">
+                        <h2><i class="fas fa-database"></i> VPS Vsan</h2>
+                        <p>Lưu trữ phân tán với độ tin cậy cao</p>
+                    </div>
+                    
+                    <div class="vps-packages">
+                        <div class="package-card featured">
+                            <div class="package-badge">Khuyến nghị</div>
+                            <h3>Vsan Basic</h3>
+                            <div class="package-price">3.500.000 VNĐ<span>/tháng</span></div>
+                            <ul class="package-features">
+                                <li><i class="fas fa-check"></i> 3 Node Cluster</li>
+                                <li><i class="fas fa-check"></i> 1TB Storage</li>
+                                <li><i class="fas fa-check"></i> RAID 5 Protection</li>
+                                <li><i class="fas fa-check"></i> Auto Failover</li>
+                                <li><i class="fas fa-check"></i> 99.9% Uptime</li>
+                            </ul>
+                            <button class="package-btn">Chọn gói</button>
+                        </div>
+                        
+                        <div class="package-card">
+                            <h3>Vsan Advanced</h3>
+                            <div class="package-price">6.500.000 VNĐ<span>/tháng</span></div>
+                            <ul class="package-features">
+                                <li><i class="fas fa-check"></i> 5 Node Cluster</li>
+                                <li><i class="fas fa-check"></i> 3TB Storage</li>
+                                <li><i class="fas fa-check"></i> RAID 6 Protection</li>
+                                <li><i class="fas fa-check"></i> Auto Failover</li>
+                                <li><i class="fas fa-check"></i> 99.99% Uptime</li>
+                            </ul>
+                            <button class="package-btn">Chọn gói</button>
+                        </div>
+                        
+                        <div class="package-card">
+                            <h3>Vsan Enterprise</h3>
+                            <div class="package-price">12.500.000 VNĐ<span>/tháng</span></div>
+                            <ul class="package-features">
+                                <li><i class="fas fa-check"></i> 8 Node Cluster</li>
+                                <li><i class="fas fa-check"></i> 10TB Storage</li>
+                                <li><i class="fas fa-check"></i> RAID 10 Protection</li>
+                                <li><i class="fas fa-check"></i> Auto Failover</li>
+                                <li><i class="fas fa-check"></i> 99.99% Uptime</li>
+                            </ul>
+                            <button class="package-btn">Chọn gói</button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Server Hosting Section -->
+                <section id="server-hosting" class="content-section">
+                    <div class="section-header">
+                        <h2><i class="fas fa-building"></i> Dịch vụ đặt máy chủ</h2>
+                        <p>Colocation và hosting chuyên nghiệp</p>
+                    </div>
+                    
+                    <div class="hosting-features">
+                        <div class="feature-grid">
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-shield-alt"></i>
+                                </div>
+                                <h3>Bảo mật cao</h3>
+                                <p>Hệ thống bảo mật đa lớp với firewall và monitoring 24/7</p>
+                            </div>
+                            
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-bolt"></i>
+                                </div>
+                                <h3>Hiệu suất cao</h3>
+                                <p>Máy chủ mạnh mẽ với SSD NVMe và kết nối tốc độ cao</p>
+                            </div>
+                            
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-headset"></i>
+                                </div>
+                                <h3>Hỗ trợ 24/7</h3>
+                                <p>Đội ngũ kỹ thuật chuyên nghiệp hỗ trợ mọi lúc</p>
+                            </div>
+                            
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-chart-line"></i>
+                                </div>
+                                <h3>Mở rộng linh hoạt</h3>
+                                <p>Dễ dàng nâng cấp và mở rộng theo nhu cầu</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Physical Server Section -->
+                <section id="physical-server" class="content-section">
+                    <div class="section-header">
+                        <h2><i class="fas fa-server"></i> Máy chủ vật lý</h2>
+                        <p>Máy chủ riêng với hiệu suất tối đa</p>
+                    </div>
+                    
+                    <div class="server-specs">
+                        <div class="spec-category">
+                            <h3><i class="fas fa-microchip"></i> CPU</h3>
+                            <div class="spec-options">
+                                <div class="spec-option">
+                                    <span class="spec-name">Intel Xeon E5-2620 v4</span>
+                                    <span class="spec-desc">8 cores, 16 threads</span>
+                                </div>
+                                <div class="spec-option">
+                                    <span class="spec-name">Intel Xeon E5-2680 v4</span>
+                                    <span class="spec-desc">14 cores, 28 threads</span>
+                                </div>
+                                <div class="spec-option">
+                                    <span class="spec-name">Intel Xeon Gold 6248</span>
+                                    <span class="spec-desc">20 cores, 40 threads</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="spec-category">
+                            <h3><i class="fas fa-memory"></i> RAM</h3>
+                            <div class="spec-options">
+                                <div class="spec-option">
+                                    <span class="spec-name">32GB DDR4</span>
+                                    <span class="spec-desc">ECC Registered</span>
+                                </div>
+                                <div class="spec-option">
+                                    <span class="spec-name">64GB DDR4</span>
+                                    <span class="spec-desc">ECC Registered</span>
+                                </div>
+                                <div class="spec-option">
+                                    <span class="spec-name">128GB DDR4</span>
+                                    <span class="spec-desc">ECC Registered</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="spec-category">
+                            <h3><i class="fas fa-hdd"></i> Storage</h3>
+                            <div class="spec-options">
+                                <div class="spec-option">
+                                    <span class="spec-name">2x 1TB SSD</span>
+                                    <span class="spec-desc">RAID 1</span>
+                                </div>
+                                <div class="spec-option">
+                                    <span class="spec-name">4x 1TB SSD</span>
+                                    <span class="spec-desc">RAID 10</span>
+                                </div>
+                                <div class="spec-option">
+                                    <span class="spec-name">8x 2TB SSD</span>
+                                    <span class="spec-desc">RAID 10</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Services Section -->
+                <section id="services" class="content-section">
+                    <h2>Gói dịch vụ</h2>
+                    <div class="services-packages">
+                        <div class="package-card">
+                            <h3>Gói Cơ bản</h3>
+                            <div class="package-price">5.000.000 VNĐ</div>
+                            <ul class="package-features">
+                                <li>Thiết kế website responsive</li>
+                                <li>5 trang web</li>
+                                <li>Form liên hệ</li>
+                                <li>Hỗ trợ 3 tháng</li>
+                            </ul>
+                            <button class="btn btn-primary">Chọn gói</button>
+                        </div>
+                        <div class="package-card featured">
+                            <div class="package-badge">Phổ biến</div>
+                            <h3>Gói Nâng cao</h3>
+                            <div class="package-price">10.000.000 VNĐ</div>
+                            <ul class="package-features">
+                                <li>Thiết kế website responsive</li>
+                                <li>10 trang web</li>
+                                <li>CMS quản lý</li>
+                                <li>SEO cơ bản</li>
+                                <li>Hỗ trợ 6 tháng</li>
+                            </ul>
+                            <button class="btn btn-primary">Chọn gói</button>
+                        </div>
+                        <div class="package-card">
+                            <h3>Gói Premium</h3>
+                            <div class="package-price">20.000.000 VNĐ</div>
+                            <ul class="package-features">
+                                <li>Thiết kế website responsive</li>
+                                <li>Không giới hạn trang</li>
+                                <li>CMS nâng cao</li>
+                                <li>SEO chuyên sâu</li>
+                                <li>Mobile app</li>
+                                <li>Hỗ trợ 12 tháng</li>
+                            </ul>
+                            <button class="btn btn-primary">Chọn gói</button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Contact Section -->
+                <section id="contact" class="content-section">
+                    <h2>Liên hệ với chúng tôi</h2>
+                    <div class="contact-content">
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                <div>
+                                    <h4>Điện thoại</h4>
+                                    <p>+84 123 456 789</p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <div>
+                                    <h4>Email</h4>
+                                    <p>info@waterdg.vn</p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div>
+                                    <h4>Địa chỉ</h4>
+                                    <p>Hà Nội, Việt Nam</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="contact-form">
+                            <form>
+                                <div class="form-group">
+                                    <input type="text" placeholder="Họ và tên" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" placeholder="Email" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="tel" placeholder="Số điện thoại" required>
+                                </div>
+                                <div class="form-group">
+                                    <textarea placeholder="Nội dung tin nhắn" rows="5" required></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-large">Gửi tin nhắn</button>
+                            </form>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Commitment Section -->
+                <section id="commitment" class="content-section">
+                    <h2>Cam kết của chúng tôi</h2>
+                    <div class="commitments-grid">
+                        <div class="commitment-card">
+                            <div class="commitment-icon"><i class="fas fa-clock"></i></div>
+                            <h3>Giao hàng đúng hạn</h3>
+                            <p>Cam kết hoàn thành dự án đúng thời gian đã thỏa thuận</p>
+                        </div>
+                        <div class="commitment-card">
+                            <div class="commitment-icon"><i class="fas fa-shield-alt"></i></div>
+                            <h3>Bảo hành chất lượng</h3>
+                            <p>Hỗ trợ và bảo hành sản phẩm trong thời gian dài</p>
+                        </div>
+                        <div class="commitment-card">
+                            <div class="commitment-icon"><i class="fas fa-headset"></i></div>
+                            <h3>Hỗ trợ 24/7</h3>
+                            <p>Đội ngũ hỗ trợ khách hàng luôn sẵn sàng</p>
+                        </div>
+                        <div class="commitment-card">
+                            <div class="commitment-icon"><i class="fas fa-money-bill-wave"></i></div>
+                            <h3>Giá cả hợp lý</h3>
+                            <p>Mức giá cạnh tranh và phù hợp với chất lượng</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <!-- Product Modal -->
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-body" id="modalBody">
+                <!-- Nội dung sản phẩm sẽ được load bằng JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Socket.IO (temporarily disabled) -->
+    <!-- <script src="/socket.io/socket.io.js"></script> -->
+    
+    <!-- Modern UI Framework -->
+    <script src="js/modern-ui.js"></script>
+    <script src="js/enhanced-notifications.js"></script>
+    
+    <script src="js/data.js"></script>
+    <script src="js/managers.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/right-sidebar-auth.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/test-api.js"></script>
+    <script src="js/test-auth.js"></script>
+</body>
+</html>
