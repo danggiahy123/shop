@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Responsive - Waterdg</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/modern-ui.css">
+    
+    <style>
+        /* Debug styles for laptop screen */
+        .debug-info {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            font-family: monospace;
+            font-size: 12px;
+            z-index: 9999;
+        }
+        
+        .debug-info::before {
+            content: 'Screen: ';
+        }
+        
+        /* Fix for laptop screens */
+        @media (min-width: 1024px) and (max-width: 1440px) {
+            .app-container {
+                min-height: 100vh;
+            }
+            
+            .sidebar {
+                width: 280px;
+                position: fixed;
+                top: 0;
+                left: 0;
+                height: 100vh;
+                z-index: 1000;
+            }
+            
+            .main-content {
+                margin-left: 280px;
+                min-height: 100vh;
+            }
+            
+            .content {
+                padding: 2rem;
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+            
+            .hero-section {
+                padding: 4rem 0;
+            }
+            
+            .hero-title {
+                font-size: 3rem;
+            }
+            
+            .features-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 2rem;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 2rem;
+            }
+        }
+        
+        /* Fix for smaller laptop screens */
+        @media (min-width: 768px) and (max-width: 1023px) {
+            .sidebar {
+                width: 260px;
+            }
+            
+            .main-content {
+                margin-left: 260px;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        /* Fix for mobile */
+        @media (max-width: 767px) {
+            .sidebar {
+                width: 100vw;
+                transform: translateX(-100%);
+            }
+            
+            .sidebar.open {
+                transform: translateX(0);
+            }
+            
+            .main-content {
+                margin-left: 0;
+            }
+            
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        /* Ensure proper spacing */
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary-500) 0%, var(--primary-700) 100%);
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .hero-title {
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.025em;
+            line-height: 1.1;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.25rem;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+        
+        .hero-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .stats-section {
+            background: white;
+            padding: 4rem 0;
+            border-top: 1px solid var(--gray-200);
+        }
+        
+        .stats-grid {
+            display: grid;
+            gap: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary-500);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--gray-600);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        .features-section {
+            padding: 4rem 0;
+            background: var(--gray-50);
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 1rem;
+            letter-spacing: -0.025em;
+        }
+        
+        .section-subtitle {
+            font-size: 1.125rem;
+            color: var(--gray-600);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        
+        .features-grid {
+            display: grid;
+            gap: 2rem;
+        }
+        
+        .feature-card {
+            background: white;
+            border-radius: 1.5rem;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--gray-200);
+            transition: all 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+        }
+        
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary-100), var(--primary-200));
+            border-radius: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: var(--primary-600);
+            margin: 0 auto 1.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .feature-card:hover .feature-icon {
+            transform: scale(1.1);
+            background: linear-gradient(135deg, var(--primary-500), var(--primary-600));
+            color: white;
+        }
+        
+        .feature-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--gray-900);
+            margin-bottom: 1rem;
+        }
+        
+        .feature-description {
+            color: var(--gray-600);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+        
+        .feature-list {
+            list-style: none;
+            text-align: left;
+        }
+        
+        .feature-list li {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.875rem;
+            color: var(--gray-600);
+        }
+        
+        .feature-list li::before {
+            content: '✓';
+            color: var(--success-500);
+            font-weight: 700;
+            font-size: 0.75rem;
+        }
+        
+        .cta-section {
+            background: linear-gradient(135deg, var(--gray-900) 0%, var(--gray-800) 100%);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+        
+        .cta-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .cta-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            letter-spacing: -0.025em;
+        }
+        
+        .cta-subtitle {
+            font-size: 1.125rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+        
+        .cta-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        /* Sidebar toggle button for mobile */
+        .sidebar-toggle {
+            display: none;
+            position: fixed;
+            top: 1rem;
+            left: 1rem;
+            z-index: 1001;
+            background: var(--primary-500);
+            color: white;
+            border: none;
+            border-radius: 0.5rem;
+            padding: 0.75rem;
+            font-size: 1.25rem;
+            cursor: pointer;
+            box-shadow: var(--shadow-lg);
+        }
+        
+        @media (max-width: 767px) {
+            .sidebar-toggle {
+                display: block;
+            }
+        }
+        
+        /* Sidebar overlay */
+        .sidebar-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(4px);
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .sidebar-overlay.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        @media (min-width: 768px) {
+            .sidebar-overlay {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Debug Info -->
+    <div class="debug-info" id="debugInfo"></div>
+    
+    <!-- Sidebar Toggle for Mobile -->
+    <button class="sidebar-toggle" onclick="toggleSidebar()">
+        <i class="fas fa-bars"></i>
+    </button>
+    
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <a href="#" class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-water"></i>
+                    </div>
+                    <div>
+                        <div class="logo-text">Waterdg</div>
+                        <div class="logo-subtitle">Việt Nam</div>
+                    </div>
+                </a>
+            </div>
+            
+            <nav class="nav">
+                <div class="nav-section">
+                    <div class="nav-section-title">Trang chủ</div>
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link active">
+                                <i class="fas fa-home nav-icon"></i>
+                                Dashboard
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="nav-section">
+                    <div class="nav-section-title">Sản phẩm</div>
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="website-samples.html" class="nav-link">
+                                <i class="fas fa-globe nav-icon"></i>
+                                Website mẫu
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="fas fa-mobile-alt nav-icon"></i>
+                                Mobile app
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="fas fa-briefcase nav-icon"></i>
+                                Portfolio
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="nav-section">
+                    <div class="nav-section-title">Dịch vụ</div>
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="fas fa-server nav-icon"></i>
+                                Hosting & Server
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="fas fa-shield-alt nav-icon"></i>
+                                Bảo mật
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="fas fa-headset nav-icon"></i>
+                                Hỗ trợ 24/7
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </aside>
+        
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="header">
+                <div class="header-left">
+                    <h1 class="header-title">Dashboard</h1>
+                    <span class="header-subtitle">Chào mừng bạn đến với Waterdg</span>
+                </div>
+                <div class="header-right">
+                    <button class="btn btn-secondary" data-tooltip="Thông báo" data-tooltip-position="bottom">
+                        <i class="fas fa-bell"></i>
+                    </button>
+                    <button class="btn btn-primary" onclick="toggleRightSidebar()">
+                        <i class="fas fa-user"></i>
+                        Đăng nhập
+                    </button>
+                </div>
+            </header>
+            
+            <!-- Content -->
+            <div class="content">
+                <!-- Hero Section -->
+                <section class="hero-section">
+                    <div class="hero-content">
+                        <h1 class="hero-title">
+                            Dịch vụ thiết kế web<br>
+                            <span style="color: rgba(255,255,255,0.8)">chuyên nghiệp</span>
+                        </h1>
+                        <p class="hero-subtitle">
+                            Tạo ra những website hiện đại, tối ưu và hiệu quả cho doanh nghiệp của bạn. 
+                            Với hơn 5 năm kinh nghiệm, chúng tôi cam kết mang đến giải pháp web hoàn hảo.
+                        </p>
+                        <div class="hero-actions">
+                            <button class="btn btn-lg" style="background: white; color: var(--primary-600);">
+                                <i class="fas fa-rocket"></i>
+                                Bắt đầu ngay
+                            </button>
+                            <button class="btn btn-lg" style="background: rgba(255,255,255,0.2); color: white; border: 1px solid rgba(255,255,255,0.3);">
+                                <i class="fas fa-play"></i>
+                                Xem demo
+                            </button>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Stats Section -->
+                <section class="stats-section">
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <span class="stat-number">500+</span>
+                            <span class="stat-label">Dự án hoàn thành</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">98%</span>
+                            <span class="stat-label">Khách hàng hài lòng</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">24/7</span>
+                            <span class="stat-label">Hỗ trợ khách hàng</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">5+</span>
+                            <span class="stat-label">Năm kinh nghiệm</span>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Features Section -->
+                <section class="features-section">
+                    <div class="section-header">
+                        <h2 class="section-title">Tại sao chọn Waterdg?</h2>
+                        <p class="section-subtitle">
+                            Chúng tôi cung cấp đầy đủ các giải pháp công nghệ cho doanh nghiệp với chất lượng cao và dịch vụ chuyên nghiệp
+                        </p>
+                    </div>
+                    
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-globe"></i>
+                            </div>
+                            <h3 class="feature-title">Thiết kế Website</h3>
+                            <p class="feature-description">
+                                Website responsive, hiện đại và tối ưu SEO cho mọi thiết bị
+                            </p>
+                            <ul class="feature-list">
+                                <li>Responsive Design</li>
+                                <li>SEO Optimization</li>
+                                <li>Fast Loading</li>
+                                <li>Modern UI/UX</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-shopping-cart"></i>
+                            </div>
+                            <h3 class="feature-title">E-commerce</h3>
+                            <p class="feature-description">
+                                Website thương mại điện tử với tính năng thanh toán đầy đủ
+                            </p>
+                            <ul class="feature-list">
+                                <li>Payment Gateway</li>
+                                <li>Inventory Management</li>
+                                <li>Order Tracking</li>
+                                <li>Customer Portal</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-server"></i>
+                            </div>
+                            <h3 class="feature-title">Hosting & Server</h3>
+                            <p class="feature-description">
+                                Dịch vụ hosting và server chuyên nghiệp với uptime 99.9%
+                            </p>
+                            <ul class="feature-list">
+                                <li>High Performance</li>
+                                <li>99.9% Uptime</li>
+                                <li>24/7 Monitoring</li>
+                                <li>Auto Backup</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- CTA Section -->
+                <section class="cta-section">
+                    <div class="cta-content">
+                        <h2 class="cta-title">Sẵn sàng bắt đầu?</h2>
+                        <p class="cta-subtitle">
+                            Liên hệ với chúng tôi ngay hôm nay để được tư vấn miễn phí và nhận báo giá chi tiết cho dự án của bạn
+                        </p>
+                        <div class="cta-actions">
+                            <button class="btn btn-lg" style="background: var(--primary-500); color: white;">
+                                <i class="fas fa-phone"></i>
+                                Liên hệ ngay
+                            </button>
+                            <button class="btn btn-lg" style="background: transparent; color: white; border: 1px solid rgba(255,255,255,0.3);">
+                                <i class="fas fa-calculator"></i>
+                                Báo giá miễn phí
+                            </button>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+    
+    <!-- Sidebar Overlay -->
+    <div class="sidebar-overlay" onclick="toggleSidebar()"></div>
+    
+    <!-- Scripts -->
+    <script src="js/modern-ui.js"></script>
+    <script src="js/laptop-debug.js"></script>
+    
+    <script>
+        // Debug screen size
+        function updateDebugInfo() {
+            const debugInfo = document.getElementById('debugInfo');
+            const width = window.innerWidth;
+            const height = window.innerHeight;
+            debugInfo.textContent = `${width}x${height}`;
+        }
+        
+        // Update debug info on resize
+        window.addEventListener('resize', updateDebugInfo);
+        updateDebugInfo();
+        
+        // Sidebar toggle function
+        function toggleSidebar() {
+            const sidebar = document.querySelector('.sidebar');
+            const overlay = document.querySelector('.sidebar-overlay');
+            
+            if (sidebar) {
+                sidebar.classList.toggle('open');
+                if (overlay) {
+                    overlay.classList.toggle('show');
+                }
+                document.body.style.overflow = sidebar.classList.contains('open') ? 'hidden' : '';
+            }
+        }
+        
+        // Close sidebar on escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                const sidebar = document.querySelector('.sidebar');
+                if (sidebar && sidebar.classList.contains('open')) {
+                    toggleSidebar();
+                }
+            }
+        });
+        
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('🎨 Responsive test page initialized');
+            console.log('Screen size:', window.innerWidth, 'x', window.innerHeight);
+        });
+    </script>
+</body>
+</html>
