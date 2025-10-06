@@ -509,3 +509,4 @@ document.addEventListener('DOMContentLoaded', () => {
 window.EnhancedUI = EnhancedUI;
 window.EnhancedFormValidation = EnhancedFormValidation;
 window.EnhancedSearch = EnhancedSearch;
+
