@@ -250,3 +250,4 @@ function sendSocketNotification(type, title, message, options = {}) {
 function isSocketConnected() {
     return socketManager ? socketManager.isConnected() : false;
 }
+

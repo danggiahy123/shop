@@ -260,3 +260,4 @@ function clearNotifications() {
         notificationManager.clear();
     }
 }
+

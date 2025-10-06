@@ -77,18 +77,20 @@ class ModernUI {
     // Modal Management
     setupModals() {
         document.addEventListener('click', (e) => {
-            const modalTrigger = e.target.closest('[data-modal]');
-            if (modalTrigger) {
-                e.preventDefault();
-                const modalId = modalTrigger.dataset.modal;
-                this.openModal(modalId);
-            }
+            if (e.target && typeof e.target.closest === 'function') {
+                const modalTrigger = e.target.closest('[data-modal]');
+                if (modalTrigger) {
+                    e.preventDefault();
+                    const modalId = modalTrigger.dataset.modal;
+                    this.openModal(modalId);
+                }
 
-            const modalClose = e.target.closest('.modal-close, .modal-overlay');
-            if (modalClose) {
-                const modal = modalClose.closest('.modal');
-                if (modal) {
-                    this.closeModal(modal);
+                const modalClose = e.target.closest('.modal-close, .modal-overlay');
+                if (modalClose) {
+                    const modal = modalClose.closest('.modal');
+                    if (modal) {
+                        this.closeModal(modal);
+                    }
                 }
             }
         });
@@ -128,16 +130,20 @@ class ModernUI {
     // Tooltip Management
     setupTooltips() {
         document.addEventListener('mouseenter', (e) => {
-            const tooltipTrigger = e.target.closest('[data-tooltip]');
-            if (tooltipTrigger) {
-                this.showTooltip(tooltipTrigger);
+            if (e.target && typeof e.target.closest === 'function') {
+                const tooltipTrigger = e.target.closest('[data-tooltip]');
+                if (tooltipTrigger) {
+                    this.showTooltip(tooltipTrigger);
+                }
             }
         }, true);
 
         document.addEventListener('mouseleave', (e) => {
-            const tooltipTrigger = e.target.closest('[data-tooltip]');
-            if (tooltipTrigger) {
-                this.hideTooltip();
+            if (e.target && typeof e.target.closest === 'function') {
+                const tooltipTrigger = e.target.closest('[data-tooltip]');
+                if (tooltipTrigger) {
+                    this.hideTooltip();
+                }
             }
         }, true);
     }
@@ -661,3 +667,4 @@ function closeSidebar() {
         modernUI.closeSidebar();
     }
 }
+

@@ -305,3 +305,4 @@ function refreshLaptopDebug() {
         laptopDebugger.refresh();
     }
 }
+
